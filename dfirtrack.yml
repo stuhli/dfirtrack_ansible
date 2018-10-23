@@ -1,0 +1,112 @@
+---
+- hosts: dfirtrack.testing.vm
+
+  roles:
+    - { role: dfirtrack }
+
+  vars_prompt:
+
+  - name: "dfirtrack_repo"
+    prompt: "DFIRTRACK | Enter the source GIT REPO of the PROJECT"
+    default: "https://github.com/stuhli/dfirtrack.git"
+    private: no
+
+  - name: "dfirtrack_dir"
+    prompt: "DFIRTRACK | Enter the PATH of the PROJECT (ABSOLUTE path)"
+    default: "/home/forensics/dfirtrack"
+    private: no
+
+  - name: "venv_dir"
+    prompt: "DJANGO | Enter the PATH of the VIRTUAL ENVIRONMENT (ABSOLUTE path)"
+    default: "/home/forensics/python_virtualenvs/python3.5_django2.0"
+    private: no
+
+  - name: "log_dir"
+    prompt: "DFIRTRACK | Enter the DIRECTORY of LOGFILES (ABSOLUTE path)"
+    default: "/home/forensics/log"
+    private: no
+
+  - name: "secret_key"
+    prompt: "DFIRTRACK | Enter a SECRET KEY of settings.py"
+    default: "*hlj$lde*$6&6ae8_48p)ri+%545!8gvzbrbkl-@69jue4vx79"
+    private: no
+
+  - name: "markdown_proj"
+    prompt: "MARKDOWN | Enter a PROJECT NAME for MARKDOWN"
+    default: "markdown"
+    private: no
+
+  - name: "markdown_dir"
+    prompt: "MARKDOWN | Enter the DIRECTORY of MARKDOWN files (ABSOLUTE path, WITHOUT project name)"
+    default: "/home/forensics"
+    private: no
+
+  - name: "postgresql_postgres_password"
+    prompt: "POSTGRESQL | Enter PASSWORD of user POSTGRES"
+    default: "foobar123!"
+    private: no
+
+  - name: "postgresql_database"
+    prompt: "POSTGRESQL | Enter NAME of DATABASE"
+    default: "dfirtrack"
+    private: no
+
+  - name: "postgresql_user"
+    prompt: "POSTGRESQL | Enter USERNAME of DEDICATED USER"
+    default: "dfirtrack"
+    private: no
+
+  - name: "postgresql_user_password"
+    prompt: "POSTGRESQL | Enter PASSWORD of DEDICATED USER"
+    default: "foobar123!"
+    private: no
+
+  - name: "postgresql_backup_dir"
+    prompt: "POSTGRESQL | Enter the DIRECTORY of DATABASE BACKUP (ABSOLUTE path)"
+    default: "/home/forensics/dfirtrack_backup"
+    private: no
+
+  - name: "fqdn"
+    prompt: "NGINX | Enter FQDN / URL (without protocol)"
+    default: "dfirtrack.testing.vm"
+    private: no
+
+  - name: "service_name"
+    prompt: "NGINX | Enter the NAME OF THE SERVICE (used for logfile)"
+    default: "dfirtrack"
+    private: no
+
+  - name: "openssl_o"
+    prompt: "NGINX | Enter the ORGANIZATION NAME shown in SSL"
+    default: "foobar"
+    private: no
+
+  - name: "openssl_ou"
+    prompt: "NGINX | Enter the ORGANIZATION UNIT NAME shown in SSL"
+    default: "foobar"
+    private: no
+
+  - name: "www_dir"
+    prompt: "NGINX | Enter the DIRECTORY of WEBSERVER FILES (ABSOLUTE path WITHOUT trailing slash)"
+    default: "/var/www/html"
+    private: no
+
+  - name: "giraf_fqdn"
+    prompt: "GIRAF | Enter the GIRAF FQDN"
+    default: "giraf.irt.m001"
+    private: no
+
+  - name: "giraf_ip"
+    prompt: "GIRAF | Enter the GIRAF IP"
+    default: "192.168.122.115"
+    private: no
+
+  - name: "giraf_user"
+    prompt: "GIRAF | Enter the GIRAF API USER"
+    default: "api"
+    private: no
+
+  - name: "giraf_pass"
+    prompt: "GIRAF | Enter the GIRAF API USER PASSWORD"
+    default: "api"
+    private: no
