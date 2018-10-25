@@ -38,13 +38,13 @@ The used default deployment user is called "forensics". If you wish to change, e
 For production usage (not publicly available!!!) it is recommended to think about the following values before executing:
 
 * django secret key (there are many instructions in the wild how to generate it properly),
-* path for the project,
-* path for virtual environment,
+* path for the project (`<PROJECT_DIR>`),
+* path for virtual environment (`<VENV_DIR>`),
 * path for logging,
 * path and project name (needed separately) for markdown documentation,
 * password for PostgreSQL database (default and dedicated user),
 * path for database backup,
-* URL for reaching the web interface,
+* URL for reaching the web interface (`<FQDN>`),
 * service name for nginx logging,
 * path for ngingx webserver files,
 * organization name and unit for self signed SSL certificates,
