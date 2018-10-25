@@ -18,6 +18,7 @@ Beside the installation of DFIRTrack several tasks are executed alongside. It is
 Install `sudo` (`# apt install -y sudo`) and add your favorite deployment user to `sudo` group (`# usermod -aG sudo <USER>`).
 
 **Attention:**
+
 The used default deployment user is called "forensics". If you wish to change, edit the variable `ansible_ssh_user` in `group_vars/all`.
 
 #### Ubuntu 16.04 LTS preparation
@@ -26,7 +27,11 @@ Install `python` (e. g. `$ sudo apt install -y python2.7`).
 
 #### Fast testing
 
-For fast testing the playbook may be executed with the default values (**Attention: the used default user is called "forensics"**). It was created with every option predefined. So for first testing you may skip this section.
+For fast testing the playbook may be executed with the default values. It was created with every option predefined. So for first testing you may skip this section.
+
+**Attention:**
+
+The used default deployment user is called "forensics". If you wish to change, edit the variable `ansible_ssh_user` in `group_vars/all`.
 
 #### Production usage
 
