@@ -15,11 +15,14 @@ Beside the installation of DFIRTrack several tasks are executed alongside. It is
 
 #### Debian Stretch preparation
 
-Install `sudo` (`apt install -y sudo`) and add your favorite deployment user to `sudo` (`usermod -aG sudo <USER>`) group. **Attention: the used default user is called "forensics"**
+Install `sudo` (`# apt install -y sudo`) and add your favorite deployment user to `sudo` group (`# usermod -aG sudo <USER>`).
+
+**Attention:**
+The used default deployment user is called "forensics". If you wish to change, edit the variable `ansible_ssh_user` in `group_vars/all`.
 
 #### Ubuntu 16.04 LTS preparation
 
-Install `python` (e. g. `sudo apt install -y python2.7`).
+Install `python` (e. g. `$ sudo apt install -y python2.7`).
 
 #### Fast testing
 
