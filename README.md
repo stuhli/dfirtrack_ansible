@@ -90,7 +90,7 @@ The following tasks are executed:
 The following dependencies are installed (partly in a virtual environment (\*)). These are also needed for minimal installation:
 
 * `django`\* (2.0),
-* `django_q`\* (0.9.1),
+* `django_q`\*,
 * `djangorestframework`\*,
 * `gunicorn`\*,
 * `postgresql` (9.5),

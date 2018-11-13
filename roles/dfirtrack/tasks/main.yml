@@ -42,7 +42,6 @@
 - name: DJANGO | Install django-q in virtual environment
   pip:
     name: django_q
-    version: 0.9.1
     virtualenv_python: python3.5
     state: present
     virtualenv: "{{ venv_dir }}"
