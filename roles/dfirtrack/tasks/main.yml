@@ -155,7 +155,7 @@
 - name: POSTGRESQL | Set path of config (Debian Stretch)
   set_fact:
     postgresql_config: "/etc/postgresql/9.6/main/pg_hba.conf"
-  when: ansible_distribution == 'Debian' and ansible_distribution_release == 'Stretch'
+  when: ansible_distribution == 'Debian' and ansible_distribution_release == 'stretch'
 
 - name: POSTGRESQL | Set path of config (Ubuntu 16.04)
   set_fact:
