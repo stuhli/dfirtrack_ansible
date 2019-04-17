@@ -18,7 +18,7 @@
 
   - name: "venv_dir"
     prompt: "DJANGO | Enter the PATH of the VIRTUAL ENVIRONMENT (ABSOLUTE path)"
-    default: "/home/forensics/python_virtualenvs/python3.5_django2.0"
+    default: "/home/forensics/python_virtualenvs/python3_django2.0"
     private: no
 
   - name: "log_dir"
