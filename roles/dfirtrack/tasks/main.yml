@@ -4,7 +4,7 @@
 - name: GIT | Install git
   apt:
     name: git
-    state: installed
+    state: present
   become: yes
   become_method: sudo
 
@@ -24,11 +24,8 @@
 
 - name: DJANGO | Install pip3 and virtualenv
   apt:
-    name: "{{ item }}"
-    state: installed
-  with_items:
-    - python3-pip
-    - virtualenv
+    name: [ 'python3-pip', 'virtualenv']
+    state: present
   become: yes
   become_method: sudo
 
@@ -49,17 +46,10 @@
 
 - name: DJANGO | Install dependencies in virtual environment
   pip:
-    name: "{{ item }}"
+    name: ['djangorestframework', 'gunicorn', 'psycopg2-binary', 'PyYAML', 'requests', 'xlwt']
     virtualenv_python: python3
     state: present
     virtualenv: "{{ venv_dir }}"
-  with_items:
-    - djangorestframework
-    - gunicorn
-    - psycopg2-binary
-    - PyYAML
-    - requests
-    - xlwt
 
 - name: DFIRTRACK | Create log directory
   file:
@@ -73,10 +63,8 @@
 
 - name: MARKDOWN | Install mkdocs
   apt:
-    name: "{{ item }}"
-    state: installed
-  with_items:
-    - mkdocs
+    name: mkdocs
+    state: present
   become: yes
   become_method: sudo
 
@@ -308,7 +296,7 @@
 - name: UFW | Install ufw
   apt:
     name: ufw
-    state: installed
+    state: present
   become: yes
   become_method: sudo
   when: ansible_distribution == 'Debian'
