@@ -35,21 +35,21 @@
   pip:
     name: django
     version: 2.0
-    virtualenv_python: python3.5
+    virtualenv_python: python3
     state: present
     virtualenv: "{{ venv_dir }}"
 
 - name: DJANGO | Install django-q in virtual environment
   pip:
     name: django_q
-    virtualenv_python: python3.5
+    virtualenv_python: python3
     state: present
     virtualenv: "{{ venv_dir }}"
 
 - name: DJANGO | Install dependencies in virtual environment
   pip:
     name: "{{ item }}"
-    virtualenv_python: python3.5
+    virtualenv_python: python3
     state: present
     virtualenv: "{{ venv_dir }}"
   with_items:
