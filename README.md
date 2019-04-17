@@ -6,12 +6,17 @@ The following [Ansible](https://docs.ansible.com/ansible/latest/index.html) play
 
 * Debian Stretch
 * Ubuntu 16.04 LTS
+* Ubuntu 18.04 LTS
 
 Beside the installation of DFIRTrack several tasks are executed alongside. It is planned to build another role that only takes the minimum needed steps for successful plain installation.
 
 ## Usage
 
 ### Pre-execution steps
+
+#### Local host preparation
+
+You need Ansible installed on your local host. If you want to install the ['develop' branch of DFIRTrack](https://github.com/stuhli/dfirtrack/tree/develop) (see "Execution of Ansible playbook" below), you need Ansible 2.7.
 
 #### Debian Stretch preparation
 
@@ -21,9 +26,9 @@ Install `sudo` (`# apt install -y sudo`) and add your favorite deployment user t
 
 The used default deployment user is called "forensics". If you wish to change, edit the variable `ansible_ssh_user` in `group_vars/all`.
 
-#### Ubuntu 16.04 LTS preparation
+#### Ubuntu 16.04 LTS / 18.04 LTS preparation
 
-Install `python` (e. g. `$ sudo apt install -y python2.7`).
+Install `python` (e. g. `$ sudo apt install -y python`).
 
 #### Fast testing
 
@@ -53,7 +58,8 @@ For production usage (not publicly available!!!) it is recommended to think abou
 ### Execution of Ansible playbook
 
 * clone this repository to desired location: `git clone https://github.com/stuhli/dfirtrack_ansible <LOCATION> && cd <LOCATION>`,
-* add destination host to `hosts` like it is addressed by your ssh config,
+* add destination host to `hosts` file like it is addressed by your ssh config,
+* if you want to install the ['develop' branch of DFIRTrack](https://github.com/stuhli/dfirtrack/tree/develop), checkout this repo to 'develop' too: `git checkout develop`,
 * execute ansible: `ansible-playbook -i hosts [-k] -K dfirtrack.yml`,
 * confirm or change the default values while executing.
 
