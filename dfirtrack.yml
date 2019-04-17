@@ -93,20 +93,9 @@
 
   - name: "giraf_fqdn"
     prompt: "GIRAF | Enter the GIRAF FQDN"
-    default: "giraf.irt.m001"
+    default: "giraf.testing.vm"
     private: no
 
   - name: "giraf_ip"
     prompt: "GIRAF | Enter the GIRAF IP"
-    default: "192.168.122.115"
-    private: no
-
-  - name: "giraf_user"
-    prompt: "GIRAF | Enter the GIRAF API USER"
-    default: "api"
-    private: no
-
-  - name: "giraf_pass"
-    prompt: "GIRAF | Enter the GIRAF API USER PASSWORD"
-    default: "api"
     private: no
