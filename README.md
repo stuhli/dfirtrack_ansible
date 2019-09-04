@@ -16,7 +16,7 @@ Beside the installation of DFIRTrack several tasks are executed alongside. It is
 
 #### Local host preparation
 
-You need Ansible installed on your local host. If you want to install the ['develop' branch of DFIRTrack](https://github.com/stuhli/dfirtrack/tree/develop) (see "Execution of Ansible playbook" below), you need Ansible 2.7.
+You need Ansible installed on your local host. If you want to install the ['develop' branch of DFIRTrack](https://github.com/stuhli/dfirtrack/tree/develop) (see "Execution of Ansible playbook" below), you need at least Ansible 2.7.
 
 #### Debian Stretch preparation
 
@@ -59,7 +59,7 @@ For production usage (not publicly available!!!) it is recommended to think abou
 
 * clone this repository to desired location: `git clone https://github.com/stuhli/dfirtrack_ansible <LOCATION> && cd <LOCATION>`,
 * add destination host to `hosts` file like it is addressed by your ssh config,
-* if you want to install the ['develop' branch of DFIRTrack](https://github.com/stuhli/dfirtrack/tree/develop), checkout this repo to 'develop' too: `git checkout develop`,
+* if you want to install the ['develop' branch of DFIRTrack](https://github.com/stuhli/dfirtrack/tree/develop), checkout this repo to 'develop' too: `git checkout develop` ('develop' branch of DFIRTrack is then automatically cloned and installed),
 * execute ansible: `ansible-playbook -i hosts [-k] -K dfirtrack.yml`,
 * confirm or change the default values while executing.
 
@@ -95,11 +95,11 @@ The following tasks are executed:
 
 The following dependencies are installed (partly in a virtual environment (\*)). These are also needed for minimal installation:
 
-* `django`\* (2.0),
+* `django`\*,
 * `django_q`\*,
 * `djangorestframework`\*,
 * `gunicorn`\*,
-* `postgresql` (9.5),
+* `postgresql`,
 * `psycopg2-binary`\*,
 * `python3-pip`,
 * `PyYAML`\*,
