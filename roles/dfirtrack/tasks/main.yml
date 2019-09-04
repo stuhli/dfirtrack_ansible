@@ -32,7 +32,6 @@
 - name: DJANGO | Install django in virtual environment
   pip:
     name: django
-    version: 2.0
     virtualenv_python: python3
     state: present
     virtualenv: "{{ venv_dir }}"
