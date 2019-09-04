@@ -18,7 +18,7 @@
 
   - name: "venv_dir"
     prompt: "DJANGO | Enter the PATH of the VIRTUAL ENVIRONMENT (ABSOLUTE path)"
-    default: "/home/forensics/python_virtualenvs/python3_django2.0"
+    default: "/home/forensics/venv"
     private: no
 
   - name: "log_dir"
@@ -28,7 +28,7 @@
 
   - name: "secret_key"
     prompt: "DFIRTRACK | Enter a SECRET KEY of settings.py"
-    default: "*hlj$lde*$6&6ae8_48p)ri+%545!8gvzbrbkl-@69jue4vx79"
+    default: "CHANGEME"
     private: no
 
   - name: "markdown_proj"
