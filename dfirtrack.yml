@@ -18,7 +18,7 @@
 
   - name: "venv_dir"
     prompt: "DJANGO | Enter the PATH of the VIRTUAL ENVIRONMENT (ABSOLUTE path)"
-    default: "/home/forensics/python_virtualenvs/python3.5_django2.0"
+    default: "/home/forensics/venv"
     private: no
 
   - name: "log_dir"
@@ -28,7 +28,7 @@
 
   - name: "secret_key"
     prompt: "DFIRTRACK | Enter a SECRET KEY of settings.py"
-    default: "*hlj$lde*$6&6ae8_48p)ri+%545!8gvzbrbkl-@69jue4vx79"
+    default: "CHANGEME"
     private: no
 
   - name: "markdown_proj"
@@ -93,20 +93,9 @@
 
   - name: "giraf_fqdn"
     prompt: "GIRAF | Enter the GIRAF FQDN"
-    default: "giraf.irt.m001"
+    default: "giraf.testing.vm"
     private: no
 
   - name: "giraf_ip"
     prompt: "GIRAF | Enter the GIRAF IP"
-    default: "192.168.122.115"
-    private: no
-
-  - name: "giraf_user"
-    prompt: "GIRAF | Enter the GIRAF API USER"
-    default: "api"
-    private: no
-
-  - name: "giraf_pass"
-    prompt: "GIRAF | Enter the GIRAF API USER PASSWORD"
-    default: "api"
     private: no

@@ -53,7 +53,7 @@ For production usage (not publicly available!!!) it is recommended to think abou
 * service name for nginx logging,
 * path for ngingx webserver files,
 * organization name and unit for self signed SSL certificates,
-* stuff for GIRAF API (project is not public yet).
+* URL and IP for GIRAF API (project is not public yet).
 
 ### Execution of Ansible playbook
 
