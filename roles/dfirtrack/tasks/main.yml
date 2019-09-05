@@ -12,7 +12,6 @@
   git:
     repo: "{{ dfirtrack_repo }}"
     dest: "{{ dfirtrack_dir }}"
-    version: "develop"
 
 - name: DFIRTRACK | Copy settings.py
   template:
