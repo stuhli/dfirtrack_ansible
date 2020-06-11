@@ -1,5 +1,6 @@
 # Ansible files
 *.retry
+hosts_local
 
 # Django settings
 settings.py

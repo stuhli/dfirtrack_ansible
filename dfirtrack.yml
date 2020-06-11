@@ -6,19 +6,14 @@
 
   vars_prompt:
 
-  - name: "dfirtrack_repo"
-    prompt: "DFIRTRACK | Enter the source GIT REPO of the PROJECT"
-    default: "https://github.com/stuhli/dfirtrack.git"
+  - name: "dfirtrack_branch"
+    prompt: "DFIRTRACK | Enter the BRANCH to clone (recommended: master / develop)"
+    default: "develop"
     private: no
 
   - name: "dfirtrack_dir"
     prompt: "DFIRTRACK | Enter the PATH of the PROJECT (ABSOLUTE path)"
     default: "/home/forensics/dfirtrack"
-    private: no
-
-  - name: "venv_dir"
-    prompt: "DJANGO | Enter the PATH of the VIRTUAL ENVIRONMENT (ABSOLUTE path)"
-    default: "/home/forensics/venv"
     private: no
 
   - name: "log_dir"
@@ -91,11 +86,13 @@
     default: "/var/www/html"
     private: no
 
-  - name: "giraf_fqdn"
-    prompt: "GIRAF | Enter the GIRAF FQDN"
-    default: "giraf.testing.vm"
-    private: no
-
-  - name: "giraf_ip"
-    prompt: "GIRAF | Enter the GIRAF IP"
-    private: no
+# TODO: wait for GIRAF development
+#  - name: "giraf_fqdn"
+#    prompt: "GIRAF | Enter the GIRAF FQDN"
+#    default: "giraf.testing.vm"
+#    private: no
+#
+#  - name: "giraf_ip"
+#    prompt: "GIRAF | Enter the GIRAF IP"
+#    default: "127.0.0.1"
+#    private: no

@@ -10,8 +10,9 @@
 
 - name: DFIRTRACK | Clone repo
   git:
-    repo: "{{ dfirtrack_repo }}"
+    repo: "https://github.com/stuhli/dfirtrack.git"
     dest: "{{ dfirtrack_dir }}"
+    version: "{{ dfirtrack_branch }}"
 
 - name: DFIRTRACK | Copy settings.py
   template:
@@ -19,32 +20,25 @@
     dest: "{{ dfirtrack_dir }}/dfirtrack/settings.py"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
-    mode: '0640'
+    mode: "0640"
 
-- name: DJANGO | Install pip3 and virtualenv
+- name: DJANGO | Install python dependencies
   apt:
-    name: [ 'python3-pip', 'virtualenv']
-    state: present
+    name:
+      - python-setuptools
+      - python3-pip
+      - python3-virtualenv
+    state: latest
   become: yes
   become_method: sudo
 
-- name: DJANGO | Install django in virtual environment
-  pip:
-    name: django
-    virtualenv_python: python3
-    state: present
-    virtualenv: "{{ venv_dir }}"
+- name: DJANGO | Create subdirectory for virtual environment
+  set_fact:
+    venv_dir: "{{ dfirtrack_dir }}/venv"
 
-- name: DJANGO | Install django-q in virtual environment
+- name: DJANGO | Install django and requirements
   pip:
-    name: django_q
-    virtualenv_python: python3
-    state: present
-    virtualenv: "{{ venv_dir }}"
-
-- name: DJANGO | Install dependencies in virtual environment
-  pip:
-    name: ['djangorestframework', 'gunicorn', 'psycopg2-binary', 'PyYAML', 'requests', 'xlwt']
+    requirements: "{{ dfirtrack_dir }}/requirements.txt"
     virtualenv_python: python3
     state: present
     virtualenv: "{{ venv_dir }}"
@@ -354,11 +348,12 @@
   become: yes
   become_method: sudo
 
-- name: GIRAF | Add hostname to /etc/hosts
-  lineinfile:
-    dest: /etc/hosts
-    insertafter: '^127\.0\.1\.1'
-    line: "{{ giraf_ip }} {{ giraf_fqdn }}"
-    state: present
-  become: yes
-  become_method: sudo
+# TODO: wait for GIRAF development
+#- name: GIRAF | Add hostname to /etc/hosts
+#  lineinfile:
+#    dest: /etc/hosts
+#    insertafter: '^127\.0\.1\.1'
+#    line: "{{ giraf_ip }} {{ giraf_fqdn }}"
+#    state: present
+#  become: yes
+#  become_method: sudo
